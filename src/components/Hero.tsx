@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
-import { ArrowRight, Mail, MapPin, Calendar, ChevronDown, Sparkles, Code2 } from 'lucide-react';
+import { useState, useEffect, Fragment } from 'react';
+import { ArrowRight, Mail, MapPin, Calendar, Sparkles, Code2 } from 'lucide-react';
 import { PROFILE_INFO } from '../utils/portfolio';
+import ScrollDown from './ScrollDown';
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -11,24 +12,14 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleScrollClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const target = document.querySelector('#about');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-between bg-[#FBFDFC] text-slate-900 overflow-hidden pt-24 pb-6 sm:pt-32 sm:pb-10"
+      className="relative min-h-screen flex flex-col justify-between bg-[#FBFDFC] dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden pt-24 pb-6 sm:pt-32 sm:pb-10"
       aria-label="Hero Introduction"
     >
       {/* Subtle top gradient wash */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-[#E6FFFC]/70 via-[#E6FFFC]/30 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-gradient-to-b from-[#E6FFFC]/70 via-[#E6FFFC]/30 to-transparent dark:from-[#0F766E]/15 dark:via-[#0F766E]/5"
         aria-hidden="true"
       />
 
@@ -43,12 +34,12 @@ export default function Hero() {
               }`}
               style={{ transitionDelay: '0ms' }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200/80 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full rounded-full bg-[#20C9C3] opacity-75 animate-ping" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#20C9C3]" />
                 </span>
-                <span className="text-xs font-medium text-slate-600 tracking-wide">
+                <span className="text-xs font-medium text-slate-600 dark:text-slate-300 tracking-wide">
                   {PROFILE_INFO.availabilityStatus}
                 </span>
               </div>
@@ -61,8 +52,8 @@ export default function Hero() {
               }`}
               style={{ transitionDelay: '100ms' }}
             >
-              <p className="text-sm sm:text-base font-medium text-[#0F766E]">{PROFILE_INFO.greeting}</p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold text-slate-900 tracking-tight leading-[1.1]">
+              <p className="text-sm sm:text-base font-medium text-[#0F766E] dark:text-[#2DD4BF]">{PROFILE_INFO.greeting}</p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
                 {PROFILE_INFO.name}
               </h1>
             </div>
@@ -74,7 +65,7 @@ export default function Hero() {
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-slate-400">
+              <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-slate-400 dark:text-slate-500">
                 {PROFILE_INFO.role}
               </p>
             </div>
@@ -86,14 +77,14 @@ export default function Hero() {
               }`}
               style={{ transitionDelay: '300ms' }}
             >
-              <p className="text-sm sm:text-base text-slate-600 max-w-md leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-md leading-relaxed">
                 {PROFILE_INFO.description}
               </p>
             </div>
 
             {/* 5. Meta (location + age) */}
             <div
-              className={`flex items-center gap-6 text-sm text-slate-600 transition-all duration-700 ease-out ${
+              className={`flex items-center gap-6 text-sm text-slate-600 dark:text-slate-400 transition-all duration-700 ease-out ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
               style={{ transitionDelay: '400ms' }}
@@ -102,7 +93,7 @@ export default function Hero() {
                 <MapPin className="w-4 h-4 text-[#20C9C3]" />
                 {PROFILE_INFO.location.value}
               </span>
-              <span className="w-px h-4 bg-slate-200" aria-hidden="true" />
+              <span className="w-px h-4 bg-slate-200 dark:bg-slate-700" aria-hidden="true" />
               <span className="inline-flex items-center gap-2">
                 <Calendar className="w-4 h-4 text-[#20C9C3]" />
                 <span className="tabular-nums">{PROFILE_INFO.age.value} years old</span>
@@ -118,18 +109,42 @@ export default function Hero() {
             >
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F766E] text-white text-sm sm:text-base font-medium shadow-sm hover:bg-[#0B4F4A] hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] focus-visible:ring-offset-2"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F766E] text-white text-sm sm:text-base font-medium shadow-sm hover:bg-[#0B4F4A] hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950"
               >
                 View Projects
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-800 text-sm sm:text-base font-medium border border-slate-200 hover:border-[#20C9C3] hover:text-[#0F766E] hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] focus-visible:ring-offset-2"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 text-sm sm:text-base font-medium border border-slate-200 dark:border-slate-700 hover:border-[#20C9C3] hover:text-[#0F766E] dark:hover:text-[#2DD4BF] hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950"
               >
                 <Mail className="w-4 h-4" />
                 Contact Me
               </a>
+            </div>
+
+            {/* 7. Stats */}
+            <div
+              className={`flex flex-wrap items-center gap-x-6 sm:gap-x-10 gap-y-4 w-full border-t border-slate-200/70 dark:border-slate-800 pt-5 transition-all duration-700 ease-out ${
+                isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+              style={{ transitionDelay: '600ms' }}
+            >
+              {PROFILE_INFO.stats.map((stat, i) => (
+                <Fragment key={stat.label}>
+                  {i > 0 && (
+                    <span className="w-px h-10 bg-slate-200 dark:bg-slate-700" aria-hidden="true" />
+                  )}
+                  <div>
+                    <span className="block text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight tabular-nums">
+                      {stat.value}
+                    </span>
+                    <span className="block text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                      {stat.label}
+                    </span>
+                  </div>
+                </Fragment>
+              ))}
             </div>
           </div>
 
@@ -141,7 +156,7 @@ export default function Hero() {
             style={{ transitionDelay: '250ms' }}
           >
             <div className="relative w-full max-w-[300px] sm:max-w-[360px]">
-              <div className="relative rounded-3xl overflow-hidden bg-white border border-slate-200/80 shadow-[0_24px_60px_-24px_rgba(15,118,110,0.25)]">
+              <div className="relative rounded-3xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-[0_24px_60px_-24px_rgba(15,118,110,0.25)] dark:shadow-[0_24px_60px_-24px_rgba(0,0,0,0.5)]">
                 {!imageError ? (
                   <img
                     src="/profile.jpg"
@@ -151,20 +166,20 @@ export default function Hero() {
                     loading="eager"
                   />
                 ) : (
-                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-[#F8FAFC] text-slate-700 p-6 text-center">
-                    <div className="w-20 h-20 rounded-full bg-[#E6FFFC] text-[#0F766E] flex items-center justify-center mb-3">
+                  <div className="w-full aspect-square flex flex-col items-center justify-center bg-[#F8FAFC] dark:bg-slate-800 text-slate-700 dark:text-slate-300 p-6 text-center">
+                    <div className="w-20 h-20 rounded-full bg-[#E6FFFC] dark:bg-[#0F766E]/25 text-[#0F766E] dark:text-[#2DD4BF] flex items-center justify-center mb-3">
                       <Code2 className="w-9 h-9" />
                     </div>
-                    <span className="text-sm font-semibold text-slate-700">Min Thant Kyaw</span>
-                    <span className="text-xs text-slate-400 mt-1">/public/profile.jpg</span>
+                    <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">Min Thant Kyaw</span>
+                    <span className="text-xs text-slate-400 dark:text-slate-500 mt-1">/public/profile.jpg</span>
                   </div>
                 )}
               </div>
 
               {/* Floating role chip */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-slate-200/80 shadow-lg whitespace-nowrap">
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 shadow-lg whitespace-nowrap">
                 <Sparkles className="w-4 h-4 text-[#20C9C3]" />
-                <span className="text-xs font-semibold text-slate-800">Frontend Developer</span>
+                <span className="text-xs font-semibold text-slate-800 dark:text-slate-100">Frontend Developer</span>
               </div>
             </div>
           </div>
@@ -178,23 +193,8 @@ export default function Hero() {
         }`}
         style={{ transitionDelay: '650ms' }}
       >
-        <a
-          href="#about"
-          onClick={handleScrollClick}
-          className="group flex flex-col items-center gap-1.5 text-slate-400 hover:text-[#0F766E] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] rounded-full p-2"
-          aria-label="Scroll to next section"
-        >
-          <span className="text-[10px] font-medium tracking-[0.2em] uppercase">Scroll</span>
-          <ChevronDown className="w-4 h-4 animate-bounce" />
-        </a>
+        <ScrollDown target="expertise" />
       </div>
-
-      {/* Hidden section anchors */}
-      <div id="about" className="sr-only" tabIndex={-1} aria-hidden="true" />
-      <div id="expertise" className="sr-only" tabIndex={-1} aria-hidden="true" />
-      <div id="projects" className="sr-only" tabIndex={-1} aria-hidden="true" />
-      <div id="stack" className="sr-only" tabIndex={-1} aria-hidden="true" />
-      <div id="contact" className="sr-only" tabIndex={-1} aria-hidden="true" />
     </section>
   );
 }

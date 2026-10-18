@@ -22,8 +22,8 @@ test('isNavbarScrolled returns true when scroll exceeds threshold', () => {
 
 test('NAV_ITEMS contains all 5 required portfolio navigation items', () => {
   assert.equal(NAV_ITEMS.length, 5);
-  const expectedLabels = ['Expertise', 'About', 'Projects', 'Stack', 'Contact'];
-  const expectedHrefs = ['#expertise', '#about', '#projects', '#stack', '#contact'];
+  const expectedLabels = ['Expertise', 'Experience', 'Projects', 'Stack', 'Contact'];
+  const expectedHrefs = ['#expertise', '#experience', '#projects', '#stack', '#contact'];
 
   NAV_ITEMS.forEach((item, index) => {
     assert.equal(item.label, expectedLabels[index]);

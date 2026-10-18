@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          var dark = t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
     <title>Min Thant Kyaw — Developer Portfolio</title>
     <meta name="description" content="Modern personal developer portfolio for Min Thant Kyaw featuring clean, scalable web development expertise." />
     <meta property="og:title" content="Min Thant Kyaw — Developer Portfolio" />
@@ -13,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-[#FBFDFC] text-slate-900 antialiased selection:bg-[#E6FFFC] selection:text-[#0F766E]">
+  <body class="bg-[#FBFDFC] dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-[#E6FFFC] dark:selection:bg-[#0F766E]/40 selection:text-[#0F766E] dark:selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, Cambria, serif;
@@ -70,6 +72,17 @@
 
 .animate-fadeIn {
   animation: fadeIn 0.25s ease-out both;
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -13;
+  }
+}
+
+.animate-dash {
+  stroke-dasharray: 6 7;
+  animation: dashFlow 1.4s linear infinite;
 }
 
 /* Nav link animated underline from left to right */

@@ -137,3 +137,130 @@ export const EXPERTISE_ITEMS: readonly ExpertiseItem[] = [
     featured: false,
   },
 ];
+
+export const EXPERIENCE_SECTION = {
+  label: 'CAREER',
+  title: 'Experience',
+  description:
+    'My professional journey — the roles I have held and the companies I have contributed to.',
+} as const;
+
+export interface ExperienceItem {
+  readonly id: string;
+  readonly role: string;
+  readonly company: string;
+  readonly period: string;
+  readonly current: boolean;
+  readonly responsibilities: readonly string[];
+  readonly achievements: readonly string[];
+}
+
+export const EXPERIENCE_ITEMS: readonly ExperienceItem[] = [
+  {
+    id: 'metateam-senior',
+    role: 'Senior Developer',
+    company: 'Metateam Myanmar Co., Ltd',
+    period: 'July 2025 — Present',
+    current: true,
+    responsibilities: [
+      'Lead backend architecture and technical decisions across projects',
+      'Review code and mentor junior developers',
+      'Manage servers, environments and deployments',
+    ],
+    achievements: [
+      'Improved API response time by 40%',
+      'Delivered a high-traffic system used by 5,000+ users',
+      'Standardized the CI/CD pipeline across client projects',
+    ],
+  },
+  {
+    id: 'metateam-junior',
+    role: 'Junior Developer',
+    company: 'Metateam Myanmar Co., Ltd',
+    period: 'July 2024 — July 2025',
+    current: false,
+    responsibilities: [
+      'Built responsive pages and UI components for client projects',
+      'Contributed to REST APIs and database models',
+      'Customized WordPress themes and plugins',
+      'Fixed bugs and wrote tests',
+    ],
+    achievements: [
+      'Delivered 10+ client websites on schedule',
+      'Reduced page load time by 30% through optimization',
+      'Cut reported bugs in half through improved testing',
+    ],
+  },
+];
+
+export const PROJECTS_SECTION = {
+  label: 'PORTFOLIO',
+  title: 'Projects',
+  description: 'A selection of projects I have designed, built and shipped.',
+} as const;
+
+export type ProjectVisual = 'backend' | 'wordpress' | 'frontend' | 'server' | 'app';
+
+export interface Project {
+  readonly id: string;
+  readonly name: string;
+  readonly description: string;
+  readonly category: string;
+  readonly visual: ProjectVisual;
+  readonly tech: readonly string[];
+  readonly liveUrl?: string;
+  readonly sourceUrl?: string;
+}
+
+export const PROJECTS: readonly Project[] = [
+  {
+    id: 'client-portfolio',
+    name: 'Client Portfolio Website',
+    description: 'A WordPress-based portfolio site with a custom theme, booking form and SEO setup.',
+    category: 'WordPress',
+    visual: 'wordpress',
+    tech: ['WordPress', 'PHP', 'CSS', 'JavaScript'],
+    liveUrl: 'https://example.com',
+    sourceUrl: 'https://github.com/minthantkyaw',
+  },
+  {
+    id: 'ecommerce-api',
+    name: 'E-commerce REST API',
+    description: 'A REST API with authentication, product catalog and order management.',
+    category: 'Backend',
+    visual: 'backend',
+    tech: ['Node.js', 'Express', 'PostgreSQL', 'JWT'],
+    liveUrl: 'https://example.com',
+    sourceUrl: 'https://github.com/minthantkyaw',
+  },
+  {
+    id: 'task-dashboard',
+    name: 'Task Manager Dashboard',
+    description: 'A responsive dashboard for tracking tasks, with real-time updates and charts.',
+    category: 'Frontend',
+    visual: 'frontend',
+    tech: ['React', 'TypeScript', 'Tailwind'],
+    liveUrl: 'https://example.com',
+    sourceUrl: 'https://github.com/minthantkyaw',
+  },
+  {
+    id: 'booking-system',
+    name: 'Booking System',
+    description: 'A full-stack booking system with calendar, payments and admin panel.',
+    category: 'Full-stack',
+    visual: 'app',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    liveUrl: 'https://example.com',
+    sourceUrl: 'https://github.com/minthantkyaw',
+  },
+  {
+    id: 'deploy-pipeline',
+    name: 'CI/CD Deployment Pipeline',
+    description: 'Automated build, test and deploy pipeline with zero-downtime releases.',
+    category: 'DevOps',
+    visual: 'server',
+    tech: ['Docker', 'Nginx', 'GitHub Actions'],
+    liveUrl: 'https://example.com',
+    sourceUrl: 'https://github.com/minthantkyaw',
+  },
+];

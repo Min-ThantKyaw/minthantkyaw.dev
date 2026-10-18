@@ -1,6 +1,8 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Expertise from './components/Expertise';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
 
 export default function App() {
   return (
@@ -15,9 +17,13 @@ export default function App() {
         {/* 3. Expertise Section */}
         <Expertise />
 
+        {/* 4. Experience Section */}
+        <Experience />
+
+        {/* 5. Projects Section */}
+        <Projects />
+
         {/* Placeholder anchors for upcoming sections (nav + scroll targets) */}
-        <div id="experience" className="sr-only" tabIndex={-1} aria-hidden="true" />
-        <div id="projects" className="sr-only" tabIndex={-1} aria-hidden="true" />
         <div id="stack" className="sr-only" tabIndex={-1} aria-hidden="true" />
         <div id="contact" className="sr-only" tabIndex={-1} aria-hidden="true" />
       </main>

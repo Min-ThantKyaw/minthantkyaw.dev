@@ -264,3 +264,79 @@ export const PROJECTS: readonly Project[] = [
     sourceUrl: 'https://github.com/minthantkyaw',
   },
 ];
+
+export const STACK_SECTION = {
+  label: 'TECH STACK',
+  title: 'Stack',
+  description: 'The technologies and tools I use to design, build and ship projects.',
+} as const;
+
+export interface StackCategory {
+  readonly id: string;
+  readonly label: string;
+  readonly items: readonly string[];
+}
+
+export const STACK_CATEGORIES: readonly StackCategory[] = [
+  {
+    id: 'backend',
+    label: 'Backend & Databases',
+    items: ['PHP', 'Laravel', 'Node.js', 'Express', 'REST APIs', 'PostgreSQL', 'MySQL'],
+  },
+  {
+    id: 'frontend',
+    label: 'Frontend Ecosystem',
+    items: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS'],
+  },
+  {
+    id: 'devops',
+    label: 'DevOps & Tools',
+    items: ['AWS', 'Git', 'GitHub', 'Docker', 'Nginx', 'GitHub Actions'],
+  },
+  {
+    id: 'ai',
+    label: 'AI',
+    items: ['ChatGPT', 'Claude', 'Gemini', 'GitHub Copilot', 'Cursor'],
+  },
+  {
+    id: 'other',
+    label: 'Other',
+    items: ['WordPress'],
+  },
+];
+
+export const CONTACT_SECTION = {
+  label: 'GET IN TOUCH',
+  title: "Let's Work Together",
+  description: "Have a project in mind or an opportunity to discuss? I'd love to hear from you.",
+} as const;
+
+export interface ContactLink {
+  readonly id: 'linkedin' | 'github' | 'email';
+  readonly label: string;
+  readonly value: string;
+  readonly href: string;
+}
+
+export const EMAIL_ADDRESS = 'hello@minthantkyaw.dev';
+
+export const CONTACT_LINKS: readonly ContactLink[] = [
+  {
+    id: 'linkedin',
+    label: 'LinkedIn',
+    value: 'in/minthantkyaw',
+    href: 'https://linkedin.com/in/minthantkyaw',
+  },
+  {
+    id: 'github',
+    label: 'GitHub',
+    value: 'github.com/Min-ThantKyaw',
+    href: 'https://github.com/Min-ThantKyaw',
+  },
+  {
+    id: 'email',
+    label: 'Email',
+    value: 'hello@minthantkyaw.dev',
+    href: 'mailto:hello@minthantkyaw.dev',
+  },
+];

@@ -50,7 +50,7 @@ export interface ProfileInfo {
 
 export const PROFILE_INFO: ProfileInfo = {
   name: "Min Thant Kyaw",
-  greeting: "Hello, I'm",
+  greeting: "Who am I?",
   role: "WEB DEVELOPER",
   availabilityStatus: "AVAILABLE FOR WORK",
   isAvailable: true,

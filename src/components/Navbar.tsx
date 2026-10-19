@@ -51,9 +51,11 @@ export default function Navbar() {
           className="group flex items-center gap-2.5 font-bold tracking-tight text-slate-900 dark:text-white transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] rounded-lg"
           aria-label="Min Thant Kyaw - Home"
         >
-          <span className="w-8 h-8 grid place-items-center rounded-lg bg-[#0F766E] text-white font-serif text-base leading-none transition-colors duration-300 group-hover:bg-[#0B4F4A]">
-            M
-          </span>
+          <img
+            src="/logo-mark.png"
+            alt="Min Thant Kyaw"
+            className="h-8 w-auto rounded-md ring-1 ring-slate-900/10 dark:ring-white/15 transition-transform duration-300 group-hover:-translate-y-0.5"
+          />
           <span className="text-lg">MinThantKyaw<span className="text-[#0F766E] dark:text-[#2DD4BF]">.</span></span>
         </a>
 

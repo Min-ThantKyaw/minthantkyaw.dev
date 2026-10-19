@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 import { PROJECTS, PROJECTS_SECTION, type Project, type ProjectVisual } from '../utils/portfolio';
 import { useInView } from '../hooks/useInView';
-import ScrollDown from './ScrollDown';
 
 /* ------------------------------------------------------------------ */
 /* Scroll-reveal wrapper (local copy for this section)                 */
@@ -83,11 +82,7 @@ function ProjectCard({ project, active }: { project: Project; active: boolean })
 
       {/* Body */}
       <div className="flex flex-col flex-1 p-6 sm:p-8">
-        <span className="self-start px-3 py-1 rounded-full bg-[#E6FFFC] dark:bg-[#0F766E]/20 text-[#0F766E] dark:text-[#2DD4BF] text-xs font-semibold uppercase tracking-wide">
-          {project.category}
-        </span>
-
-        <h3 className="mt-4 text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">
+        <h3 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight">
           {project.name}
         </h3>
 
@@ -304,9 +299,6 @@ export default function Projects() {
           <Carousel projects={PROJECTS} />
         </Reveal>
 
-        <Reveal inView={inView} delay={550} className="flex justify-center mt-12 sm:mt-14">
-          <ScrollDown target="stack" />
-        </Reveal>
       </div>
     </section>
   );

@@ -69,7 +69,7 @@ export const PROFILE_INFO: ProfileInfo = {
   stats: [
     { value: "2023", label: "In tech since" },
     { value: "30+", label: "Projects" },
-    { value: "2+", label: "Years of Experience" },
+    { value: "2+ Years", label: "Experience" },
   ],
 } as const;
 

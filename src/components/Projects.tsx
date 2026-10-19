@@ -73,12 +73,12 @@ function ProjectCard({ project, active }: { project: Project; active: boolean })
       }`}
     >
       {/* Visual / image area */}
-      <div className="relative h-56 sm:h-72 shrink-0 bg-gradient-to-br from-[#0F766E] to-[#20C9C3] flex items-center justify-center">
+      <div className="relative h-48 sm:h-60 shrink-0 bg-gradient-to-br from-[#0F766E] to-[#20C9C3] flex items-center justify-center">
         <div
           className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.14),transparent_60%)]"
           aria-hidden="true"
         />
-        <Icon className="w-20 h-20 text-white/90" aria-hidden="true" />
+        <Icon className="w-16 h-16 text-white/90" aria-hidden="true" />
       </div>
 
       {/* Body */}
@@ -191,7 +191,7 @@ function Carousel({ projects }: { projects: readonly Project[] }) {
       className="relative focus-visible:outline-none"
     >
       {/* Cards + desktop side arrows */}
-      <div className="relative h-[600px] sm:h-[660px]">
+      <div className="relative h-[540px] sm:h-[600px]">
         {projects.map((project, i) => {
           const offset = wrapOffset(i, activeIndex, count);
           const abs = Math.abs(offset);
@@ -205,7 +205,7 @@ function Carousel({ projects }: { projects: readonly Project[] }) {
           return (
             <div
               key={project.id}
-              className="absolute left-1/2 top-1/2 w-[min(86vw,540px)] h-[560px] sm:h-[620px]"
+              className="absolute left-1/2 top-1/2 w-[min(86vw,440px)] h-[500px] sm:h-[560px]"
               style={{
                 transform: `translate(-50%, -50%) translateX(${x}%) scale(${scale})`,
                 opacity,

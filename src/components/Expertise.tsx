@@ -7,7 +7,6 @@ import {
   type ExpertiseVisual,
 } from '../utils/portfolio';
 import { useInView } from '../hooks/useInView';
-import ScrollDown from './ScrollDown';
 
 /* ------------------------------------------------------------------ */
 /* Scroll-reveal wrapper                                               */
@@ -165,9 +164,6 @@ export default function Expertise() {
           ))}
         </div>
 
-        <Reveal inView={inView} delay={650} className="flex justify-center mt-12 sm:mt-14">
-          <ScrollDown target="experience" />
-        </Reveal>
       </div>
     </section>
   );

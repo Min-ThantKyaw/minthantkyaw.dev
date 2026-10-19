@@ -24,7 +24,6 @@ import {
 import { Bot, Braces, Cloud } from 'lucide-react';
 import { STACK_CATEGORIES, STACK_SECTION } from '../utils/portfolio';
 import { useInView } from '../hooks/useInView';
-import ScrollDown from './ScrollDown';
 
 /* ------------------------------------------------------------------ */
 /* Scroll-reveal wrapper (local copy for this section)                 */
@@ -177,9 +176,6 @@ export default function Stack() {
           </div>
         </Reveal>
 
-        <Reveal inView={inView} delay={450} className="flex justify-center mt-12 sm:mt-14">
-          <ScrollDown target="contact" />
-        </Reveal>
       </div>
     </section>
   );

@@ -2,7 +2,6 @@ import { type ReactNode, useState } from 'react';
 import { Briefcase, Calendar, ListChecks, Trophy } from 'lucide-react';
 import { EXPERIENCE_ITEMS, EXPERIENCE_SECTION } from '../utils/portfolio';
 import { useInView } from '../hooks/useInView';
-import ScrollDown from './ScrollDown';
 
 type ExperienceTab = 'responsibilities' | 'achievements';
 
@@ -192,9 +191,6 @@ export default function Experience() {
           </div>
         </div>
 
-        <Reveal inView={inView} delay={550} className="flex justify-center mt-12 sm:mt-14">
-          <ScrollDown target="projects" />
-        </Reveal>
       </div>
     </section>
   );

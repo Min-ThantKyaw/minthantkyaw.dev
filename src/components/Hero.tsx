@@ -1,7 +1,6 @@
 import { useState, useEffect, Fragment } from 'react';
 import { ArrowRight, Mail, MapPin, Calendar, Sparkles, Code2 } from 'lucide-react';
 import { PROFILE_INFO } from '../utils/portfolio';
-import ScrollDown from './ScrollDown';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { scrollToSection } from '../utils/scroll';
 
@@ -196,15 +195,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className={`relative w-full flex justify-center pt-6 transition-all duration-700 ease-out ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        style={{ transitionDelay: '650ms' }}
-      >
-        <ScrollDown target="expertise" />
-      </div>
     </section>
   );
 }

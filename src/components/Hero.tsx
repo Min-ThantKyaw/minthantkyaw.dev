@@ -187,10 +187,9 @@ export default function Hero() {
               </div>
 
               {/* Floating role chip */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 shadow-lg whitespace-nowrap">
-                <Sparkles className="w-4 h-4 text-[#20C9C3]" />
-                <span className="text-xs font-semibold text-slate-800 dark:text-slate-100">Frontend Developer</span>
-              </div>
+              {/* <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 shadow-lg whitespace-nowrap"> */}
+                {/* <span className="text-xs font-semibold text-slate-800 dark:text-slate-100">Web Developer</span> */}
+              {/* </div> */}
             </div>
           </div>
         </div>

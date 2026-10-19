@@ -3,6 +3,9 @@ import Hero from './components/Hero';
 import Expertise from './components/Expertise';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Stack from './components/Stack';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -23,10 +26,15 @@ export default function App() {
         {/* 5. Projects Section */}
         <Projects />
 
-        {/* Placeholder anchors for upcoming sections (nav + scroll targets) */}
-        <div id="stack" className="sr-only" tabIndex={-1} aria-hidden="true" />
-        <div id="contact" className="sr-only" tabIndex={-1} aria-hidden="true" />
+        {/* 6. Stack Section */}
+        <Stack />
+
+        {/* 7. Contact Section */}
+        <Contact />
       </main>
+
+      {/* 8. Footer */}
+      <Footer />
     </div>
   );
 }

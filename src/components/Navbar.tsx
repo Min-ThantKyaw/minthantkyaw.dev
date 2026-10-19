@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
 import { NAV_ITEMS, isNavbarScrolled, DEFAULT_SCROLL_THRESHOLD } from '../utils/portfolio';
 import { useTheme } from '../hooks/useTheme';
+import { scrollToSection } from '../utils/scroll';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,6 +29,12 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    scrollToSection(href);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
@@ -40,6 +47,7 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#"
+          onClick={(e) => handleNav(e, '#')}
           className="group flex items-center gap-2.5 font-bold tracking-tight text-slate-900 dark:text-white transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] rounded-lg"
           aria-label="Min Thant Kyaw - Home"
         >
@@ -58,6 +66,7 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
+              onClick={(e) => handleNav(e, item.href)}
               className="nav-link-underline py-1 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] rounded-xs"
             >
               {item.label}
@@ -79,6 +88,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <a
             href="#contact"
+            onClick={(e) => handleNav(e, '#contact')}
             className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium transition-all duration-200 hover:bg-[#0F766E] dark:hover:bg-[#20C9C3] dark:hover:text-white hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] focus-visible:ring-offset-2"
           >
             Let's talk
@@ -114,7 +124,7 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNav(e, item.href)}
                 className="py-2.5 px-3.5 rounded-lg hover:bg-[#E6FFFC]/60 dark:hover:bg-slate-800 hover:text-[#0F766E] dark:hover:text-[#2DD4BF] transition-colors duration-200 flex items-center justify-between"
               >
                 <span>{item.label}</span>
@@ -123,7 +133,7 @@ export default function Navbar() {
             ))}
             <a
               href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => handleNav(e, '#contact')}
               className="mt-2 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full bg-slate-900 dark:bg-white dark:text-slate-900 text-white text-sm font-medium"
             >
               Let's talk

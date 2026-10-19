@@ -3,6 +3,7 @@ import { ArrowRight, Mail, MapPin, Calendar, Sparkles, Code2 } from 'lucide-reac
 import { PROFILE_INFO } from '../utils/portfolio';
 import ScrollDown from './ScrollDown';
 import { useTypewriter } from '../hooks/useTypewriter';
+import { scrollToSection } from '../utils/scroll';
 
 const ROLES = ['Web Application Developer', 'Backend Developer'] as const;
 
@@ -116,6 +117,7 @@ export default function Hero() {
             >
               <a
                 href="#projects"
+                onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F766E] text-white text-sm sm:text-base font-medium shadow-sm hover:bg-[#0B4F4A] hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950"
               >
                 View Projects
@@ -123,6 +125,7 @@ export default function Hero() {
               </a>
               <a
                 href="#contact"
+                onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 text-sm sm:text-base font-medium border border-slate-200 dark:border-slate-700 hover:border-[#20C9C3] hover:text-[#0F766E] dark:hover:text-[#2DD4BF] hover:-translate-y-0.5 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#20C9C3] focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950"
               >
                 <Mail className="w-4 h-4" />

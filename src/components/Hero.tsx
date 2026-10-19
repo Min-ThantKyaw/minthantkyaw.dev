@@ -2,10 +2,14 @@ import { useState, useEffect, Fragment } from 'react';
 import { ArrowRight, Mail, MapPin, Calendar, Sparkles, Code2 } from 'lucide-react';
 import { PROFILE_INFO } from '../utils/portfolio';
 import ScrollDown from './ScrollDown';
+import { useTypewriter } from '../hooks/useTypewriter';
+
+const ROLES = ['Web Application Developer', 'Backend Developer'] as const;
 
 export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  const typedRole = useTypewriter(ROLES);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 50);
@@ -58,15 +62,18 @@ export default function Hero() {
               </h1>
             </div>
 
-            {/* 3. Role */}
+            {/* 3. Role (typewriter) */}
             <div
               className={`transition-all duration-700 ease-out ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              <p className="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-slate-400 dark:text-slate-500">
-                {PROFILE_INFO.role}
+              <p className="min-h-[1.4em] text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-slate-400 dark:text-slate-500">
+                {typedRole}
+                <span className="ml-0.5 text-[#20C9C3] animate-blink" aria-hidden="true">
+                  |
+                </span>
               </p>
             </div>
 

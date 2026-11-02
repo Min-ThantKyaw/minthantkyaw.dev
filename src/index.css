@@ -4,135 +4,185 @@
 
 @theme {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, Cambria, serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-  --color-aqua: #20C9C3;
-  --color-aqua-dark: #0F766E;
-  --color-aqua-deep: #0B4F4A;
-  --color-aqua-light: #E6FFFC;
+  --font-display: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-@keyframes subtleFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
+:root {
+  --canvas: #f7f9f8;
+  --surface: #ffffff;
+  --ink: #0b1220;
+  --muted: #5b6875;
+  --line: #e1e8e5;
+  --line-strong: #cbd6d2;
+  --accent: #0f766e;
+  --accent-bright: #20c9c3;
+  --accent-soft: #e6f6f3;
+  color-scheme: light;
 }
 
-@keyframes gentlePulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 0.85;
-  }
+.dark {
+  --canvas: #05090a;
+  --surface: #0a1113;
+  --ink: #f1f5f4;
+  --muted: #93a3a0;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.17);
+  --accent: #2dd4bf;
+  --accent-bright: #20c9c3;
+  --accent-soft: rgba(45, 212, 191, 0.1);
+  color-scheme: dark;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-}
 
-@keyframes scrollPill {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
+  ::selection {
+    background-color: var(--accent);
+    color: var(--canvas);
   }
-  60% {
-    transform: translateY(8px);
-    opacity: 0.2;
+
+  :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
-.animate-subtle-float {
-  animation: subtleFloat 3s ease-in-out infinite;
-}
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
 
-.animate-gentle-pulse {
-  animation: gentlePulse 3s ease-in-out infinite;
-}
-
-.animate-scroll-pill {
-  animation: scrollPill 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.25s ease-out both;
-}
-
-@keyframes dashFlow {
-  to {
-    stroke-dashoffset: -13;
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-.animate-dash {
-  stroke-dasharray: 6 7;
-  animation: dashFlow 1.4s linear infinite;
+/* Custom design tokens exposed as utilities so variants (hover:, focus:, ...) work. */
+@utility bg-canvas {
+  background-color: var(--canvas);
 }
 
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
+@utility bg-surface {
+  background-color: var(--surface);
+}
+
+@utility bg-ink {
+  background-color: var(--ink);
+}
+
+@utility bg-accent {
+  background-color: var(--accent);
+}
+
+@utility bg-accent-soft {
+  background-color: var(--accent-soft);
+}
+
+@utility bg-line {
+  background-color: var(--line);
+}
+
+@utility bg-line-strong {
+  background-color: var(--line-strong);
+}
+
+@utility text-canvas {
+  color: var(--canvas);
+}
+
+@utility text-ink {
+  color: var(--ink);
+}
+
+@utility text-muted {
+  color: var(--muted);
+}
+
+@utility text-accent {
+  color: var(--accent);
+}
+
+@utility text-line-strong {
+  color: var(--line-strong);
+}
+
+@utility border-line {
+  border-color: var(--line);
+}
+
+@utility border-line-strong {
+  border-color: var(--line-strong);
+}
+
+@utility border-accent {
+  border-color: var(--accent);
+}
+
+@utility ring-accent {
+  --tw-ring-color: var(--accent);
+}
+
+/* Frosted navbar surface (no variants needed). */
+.bg-canvas-glass {
+  background-color: var(--canvas);
+}
+
+@supports (background-color: color-mix(in srgb, red 50%, transparent)) {
+  .bg-canvas-glass {
+    background-color: color-mix(in srgb, var(--canvas) 82%, transparent);
   }
 }
 
-.animate-float-slow {
-  animation: floatSlow 6s ease-in-out infinite;
+/* Subtle dotted grid used behind the hero. */
+.bg-dot-grid {
+  background-image: radial-gradient(circle at 1px 1px, var(--line-strong) 1px, transparent 0);
+  background-size: 22px 22px;
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
 }
 
 .animate-blink {
-  animation: blink 1s step-end infinite;
+  animation: blink 1.1s step-end infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-float-slow {
-    animation: none;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Nav link animated underline from left to right */
-.nav-link-underline {
-  position: relative;
-}
-
-.nav-link-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #20C9C3;
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav-link-underline:hover::after {
-  width: 100%;
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out both;
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,19 +12,59 @@
         } catch (e) {}
       })();
     </script>
-    <title>Min Thant Kyaw — Developer Portfolio</title>
-    <meta name="description" content="Modern personal developer portfolio for Min Thant Kyaw featuring clean, scalable web development expertise." />
-    <meta property="og:title" content="Min Thant Kyaw — Developer Portfolio" />
-    <meta property="og:description" content="Modern personal developer portfolio for Min Thant Kyaw featuring clean, scalable web development expertise." />
+
+    <title>Min Thant Kyaw — Web Developer</title>
+    <meta
+      name="description"
+      content="Min Thant Kyaw is a web developer in Yangon, Myanmar building modern applications with React, TypeScript and Node.js."
+    />
+
+    <meta property="og:title" content="Min Thant Kyaw — Web Developer" />
+    <meta
+      property="og:description"
+      content="Web developer in Yangon building modern applications with React, TypeScript and Node.js."
+    />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Min Thant Kyaw — Web Developer" />
+    <meta name="twitter:image" content="/og.png" />
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f9f8" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05090a" />
+
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Min Thant Kyaw",
+        "jobTitle": "Web Developer",
+        "url": "https://minthantkyaw.dev",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Yangon",
+          "addressCountry": "MM"
+        },
+        "sameAs": [
+          "https://github.com/Min-ThantKyaw",
+          "https://linkedin.com/in/minthantkyaw"
+        ]
+      }
+    </script>
   </head>
-  <body class="bg-[#FBFDFC] dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-[#E6FFFC] dark:selection:bg-[#0F766E]/40 selection:text-[#0F766E] dark:selection:text-white">
+  <body class="antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

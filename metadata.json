@@ -1,6 +1,6 @@
 {
   "name": "Min Thant Kyaw Portfolio",
-  "description": "Modern personal developer portfolio for Min Thant Kyaw featuring clean, scalable web development expertise.",
+  "description": "Minimal developer portfolio for Min Thant Kyaw — web developer building with React, TypeScript and Node.js.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

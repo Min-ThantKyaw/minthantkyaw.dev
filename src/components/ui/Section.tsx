@@ -26,19 +26,17 @@ export default function Section({
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className={cn('relative scroll-mt-6 py-14 sm:py-20', className)}
+      className={cn('relative scroll-mt-20 py-16 sm:py-24', className)}
     >
       <Container>
-        <div className="border-t border-line pt-8 sm:pt-10">
-          <SectionHeader
-            index={index}
-            label={label}
-            title={title}
-            description={description}
-            headingId={`${id}-heading`}
-          />
-          {children}
-        </div>
+        <SectionHeader
+          index={index}
+          label={label}
+          title={title}
+          description={description}
+          headingId={`${id}-heading`}
+        />
+        {children}
       </Container>
     </section>
   );

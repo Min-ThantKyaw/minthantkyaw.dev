@@ -5,7 +5,7 @@ type Variant = 'primary' | 'outline' | 'ghost';
 type Size = 'sm' | 'md' | 'lg';
 
 const BASE =
-  'inline-flex select-none items-center justify-center gap-2 rounded-md font-medium transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50';
+  'inline-flex select-none items-center justify-center gap-2 rounded-lg font-medium transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50';
 
 const SIZES: Record<Size, string> = {
   sm: 'h-9 px-3.5 text-[13px]',
@@ -14,8 +14,8 @@ const SIZES: Record<Size, string> = {
 };
 
 const VARIANTS: Record<Variant, string> = {
-  primary: 'bg-ink text-canvas hover:bg-accent hover:text-canvas',
-  outline: 'border border-line-strong text-ink hover:border-accent hover:text-accent',
+  primary: 'bg-ink text-canvas hover:bg-accent-strong hover:text-canvas',
+  outline: 'border border-line-strong text-ink hover:border-accent hover:bg-accent-soft hover:text-accent',
   ghost: 'text-muted hover:text-ink',
 };
 

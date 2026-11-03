@@ -2,10 +2,10 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
 import Hero from './components/sections/Hero';
-import Expertise from './components/sections/Expertise';
-import Experience from './components/sections/Experience';
+import About from './components/sections/About';
+import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
-import Stack from './components/sections/Stack';
+import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
 
 export default function App() {
@@ -22,10 +22,10 @@ export default function App() {
 
       <main id="main-content">
         <Hero />
-        <Expertise />
-        <Experience />
+        <About />
+        <Skills />
         <Projects />
-        <Stack />
+        <Experience />
         <Contact />
       </main>
 

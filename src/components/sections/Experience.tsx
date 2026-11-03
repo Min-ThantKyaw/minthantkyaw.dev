@@ -8,7 +8,7 @@ export default function Experience() {
   return (
     <Section
       id="experience"
-      index="02"
+      index="04"
       label={EXPERIENCE_SECTION.label}
       title={EXPERIENCE_SECTION.title}
       description={EXPERIENCE_SECTION.description}
@@ -16,15 +16,15 @@ export default function Experience() {
       <div className="mt-12">
         {EXPERIENCE_ITEMS.map((item, index) => (
           <Reveal key={item.id} delay={index * 80}>
-            <article className="grid gap-6 border-t border-line py-10 md:grid-cols-12 md:gap-8">
+            <article className="grid gap-6 border-t border-line py-10 first:border-t-0 first:pt-0 md:grid-cols-12 md:gap-8">
               <div className="md:col-span-3">
                 <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
                   {item.period}
                 </p>
                 <p
                   className={cn(
-                    'mt-3 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em]',
-                    item.current ? 'text-accent' : 'text-muted',
+                    'mt-3 inline-flex items-center gap-2 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em]',
+                    item.current ? 'bg-accent-soft text-accent' : 'border border-line text-muted',
                   )}
                 >
                   <span

@@ -1,7 +1,8 @@
 export const CONTACT_SECTION = {
-  label: 'GET IN TOUCH',
-  title: "Let's build something worth shipping.",
-  description: "Have a project in mind or an opportunity to discuss? I'd love to hear from you.",
+  label: 'CONTACT',
+  title: "Let's work together.",
+  description:
+    "I'm open to full-time roles and interesting projects. My inbox is always open — I'll get back to you within a day.",
 } as const;
 
 export interface ContactLink {
@@ -11,7 +12,7 @@ export interface ContactLink {
   readonly href: string;
 }
 
-export const EMAIL_ADDRESS = 'hello@minthantkyaw.dev';
+export const EMAIL_ADDRESS = 'minthant1590@gmail.com';
 
 export const CONTACT_LINKS: readonly ContactLink[] = [
   {
@@ -29,7 +30,7 @@ export const CONTACT_LINKS: readonly ContactLink[] = [
   {
     id: 'email',
     label: 'Email',
-    value: 'hello@minthantkyaw.dev',
-    href: 'mailto:hello@minthantkyaw.dev',
+    value: 'minthant1590@gmail.com',
+    href: 'mailto:minthant1590@gmail.com',
   },
 ];

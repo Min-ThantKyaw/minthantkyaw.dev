@@ -1,16 +1,16 @@
-export const STACK_SECTION = {
-  label: 'TECH STACK',
-  title: 'Stack',
-  description: 'The technologies and tools I use to design, build and ship projects.',
+export const SKILLS_SECTION = {
+  label: 'TOOLBOX',
+  title: 'Skills',
+  description: 'The technologies and tools I use to design, build and ship software.',
 } as const;
 
-export interface StackCategory {
+export interface SkillCategory {
   readonly id: string;
   readonly label: string;
   readonly items: readonly string[];
 }
 
-export const STACK_CATEGORIES: readonly StackCategory[] = [
+export const SKILL_CATEGORIES: readonly SkillCategory[] = [
   {
     id: 'backend',
     label: 'Backend & Databases',
@@ -28,12 +28,12 @@ export const STACK_CATEGORIES: readonly StackCategory[] = [
   },
   {
     id: 'ai',
-    label: 'AI',
+    label: 'AI-Assisted Development',
     items: ['ChatGPT', 'Claude', 'Gemini', 'GitHub Copilot', 'Cursor'],
   },
   {
-    id: 'other',
-    label: 'Other',
+    id: 'cms',
+    label: 'CMS',
     items: ['WordPress'],
   },
 ];

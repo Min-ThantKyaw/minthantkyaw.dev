@@ -1,6 +1,6 @@
 import { type MouseEvent, useEffect, useState } from 'react';
-import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
-import { CONTACT_LINKS, EMAIL_ADDRESS, NAV_ITEMS, SECTION_IDS, isNavbarScrolled } from '../../data';
+import { ArrowUpRight, Download, Menu, Moon, Sun, X } from 'lucide-react';
+import { CONTACT_LINKS, CV_URL, EMAIL_ADDRESS, NAV_ITEMS, SECTION_IDS, isNavbarScrolled } from '../../data';
 import { useTheme } from '../../hooks/useTheme';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll';
@@ -69,18 +69,18 @@ export default function Navbar() {
         >
           <span
             aria-hidden="true"
-            className="grid h-9 w-9 place-items-center rounded-md bg-ink font-mono text-[13px] font-bold leading-none text-canvas transition-colors duration-200 group-hover:bg-accent group-hover:text-canvas"
+            className="grid h-9 w-9 place-items-center rounded-lg bg-ink font-display text-sm font-bold leading-none text-canvas transition-colors duration-200 group-hover:bg-accent group-hover:text-canvas"
           >
-            &gt;_
+            M
           </span>
-          <span className="font-mono text-[13px] font-semibold tracking-tight text-ink sm:text-sm">
+          <span className="font-display text-sm font-semibold tracking-tight text-ink sm:text-[15px]">
             minthantkyaw<span className="text-accent">.dev</span>
           </span>
         </a>
 
         {/* Desktop navigation */}
         <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
-          {NAV_ITEMS.map((item, index) => {
+          {NAV_ITEMS.map((item) => {
             const active = activeId === item.id;
             return (
               <a
@@ -89,18 +89,15 @@ export default function Navbar() {
                 onClick={(event) => handleNav(event, item.href)}
                 aria-current={active ? 'location' : undefined}
                 className={cn(
-                  'group relative py-2 font-mono text-[11px] uppercase tracking-[0.16em] transition-colors duration-200',
+                  'group relative py-2 text-sm font-medium transition-colors duration-200',
                   active ? 'text-ink' : 'text-muted hover:text-ink',
                 )}
               >
-                <span className={cn('mr-1.5', active ? 'text-accent' : 'text-muted')}>
-                  {String(index + 1).padStart(2, '0')}
-                </span>
                 {item.label}
                 <span
                   aria-hidden="true"
                   className={cn(
-                    'absolute inset-x-0 bottom-0 h-px origin-left bg-accent transition-transform duration-300',
+                    'absolute inset-x-0 bottom-0 h-0.5 origin-left rounded-full bg-accent transition-transform duration-300',
                     active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
                   )}
                 />
@@ -111,11 +108,21 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
+          <a
+            href={CV_URL}
+            download
+            aria-label="Download CV"
+            title="Download CV"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-line text-muted transition-colors duration-200 hover:border-accent hover:text-accent"
+          >
+            <Download className="h-4 w-4" />
+          </a>
+
           <button
             type="button"
             onClick={toggleTheme}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="grid h-9 w-9 place-items-center rounded-md border border-line text-muted transition-colors duration-200 hover:border-line-strong hover:text-ink"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-line text-muted transition-colors duration-200 hover:border-line-strong hover:text-ink"
           >
             {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
@@ -137,7 +144,7 @@ export default function Navbar() {
             aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={open}
             aria-controls="mobile-navigation"
-            className="grid h-9 w-9 place-items-center rounded-md border border-line text-ink transition-colors duration-200 hover:border-line-strong lg:hidden"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-line text-ink transition-colors duration-200 hover:border-line-strong lg:hidden"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -149,11 +156,11 @@ export default function Navbar() {
       {open && (
         <div
           id="mobile-navigation"
-          className="fixed inset-x-0 bottom-0 top-16 z-[45] overflow-y-auto border-t border-line bg-canvas sm:top-20 lg:hidden"
+          className="animate-fade-in fixed inset-x-0 bottom-0 top-16 z-[45] overflow-y-auto border-t border-line bg-canvas sm:top-20 lg:hidden"
         >
           <Container className="flex min-h-full flex-col py-8">
             <nav aria-label="Mobile navigation" className="flex flex-col">
-              {NAV_ITEMS.map((item, index) => {
+              {NAV_ITEMS.map((item) => {
                 const active = activeId === item.id;
                 return (
                   <a
@@ -163,18 +170,13 @@ export default function Navbar() {
                     aria-current={active ? 'location' : undefined}
                     className="group flex items-center justify-between border-b border-line py-4"
                   >
-                    <span className="flex items-baseline gap-3">
-                      <span className="font-mono text-[10px] tracking-[0.18em] text-muted">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <span
-                        className={cn(
-                          'font-display text-2xl font-medium tracking-tight transition-colors',
-                          active ? 'text-accent' : 'text-ink group-hover:text-accent',
-                        )}
-                      >
-                        {item.label}
-                      </span>
+                    <span
+                      className={cn(
+                        'font-display text-2xl font-medium tracking-tight transition-colors',
+                        active ? 'text-accent' : 'text-ink group-hover:text-accent',
+                      )}
+                    >
+                      {item.label}
                     </span>
                     <ArrowUpRight className="h-4 w-4 text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   </a>
@@ -183,14 +185,25 @@ export default function Navbar() {
             </nav>
 
             <div className="mt-auto pt-10">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">Email</p>
+              <a
+                href={CV_URL}
+                download
+                className="inline-flex items-center gap-2 rounded-lg border border-line-strong px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent"
+              >
+                <Download className="h-4 w-4" />
+                Download CV
+              </a>
+
+              <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                Email
+              </p>
               <a
                 href={`mailto:${EMAIL_ADDRESS}`}
                 className="mt-2 inline-block break-all font-display text-lg text-ink hover:text-accent"
               >
                 {EMAIL_ADDRESS}
               </a>
-              <div className="mt-5 flex flex-wrap gap-5 font-mono text-[11px] uppercase tracking-[0.16em]">
+              <div className="mt-5 flex flex-wrap gap-5 text-sm font-medium">
                 {socials.map((link) => (
                   <a
                     key={link.id}

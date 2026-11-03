@@ -11,10 +11,10 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'Expertise', href: '#expertise', id: 'expertise' },
-  { label: 'Experience', href: '#experience', id: 'experience' },
+  { label: 'About', href: '#about', id: 'about' },
+  { label: 'Skills', href: '#skills', id: 'skills' },
   { label: 'Projects', href: '#projects', id: 'projects' },
-  { label: 'Stack', href: '#stack', id: 'stack' },
+  { label: 'Experience', href: '#experience', id: 'experience' },
   { label: 'Contact', href: '#contact', id: 'contact' },
 ] as const;
 

@@ -4,7 +4,7 @@ export const ABOUT_SECTION = {
 } as const;
 
 export const CURRENT_ROLE = {
-  role: 'Senior Developer',
-  company: 'Metateam Myanmar',
-  note: 'Leading backend architecture & deployments',
+  role: "Senior Developer",
+  company: "Metateam Myanmar",
+  note: "Maintaining production applications & troubleshooting server issues",
 } as const;

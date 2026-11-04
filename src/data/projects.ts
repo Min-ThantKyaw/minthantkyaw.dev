@@ -48,7 +48,7 @@ export const PROJECTS: readonly Project[] = [
     tech: ["Node.js", "Express", "PostgreSQL", "JWT"],
     liveUrl: "https://minthantkyaw.dev",
     sourceUrl: "https://github.com/Min-ThantKyaw/minthantkyaw.dev",
-    detailsUrl: "https://minthantkyaw.dev/work/minthantkyaw.dev", // or a Notion/GitHub case study
+    detailsUrl: "https://minthantkyaw.dev/work/minthantkyaw.dev",
   },
   {
     id: "task-dashboard",

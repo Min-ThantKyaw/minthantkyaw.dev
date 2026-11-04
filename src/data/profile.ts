@@ -33,7 +33,7 @@ export const PROFILE_INFO: ProfileInfo = {
   availabilityStatus: "Available for work",
   isAvailable: true,
   headline:
-    "Web developer building production-ready applications with React, TypeScript and Node.js.",
+    "Building AI-driven, production-ready applications with a strong focus on backend development. Experienced in PHP, Laravel, Node.js, and TypeScript, with expertise in developing scalable APIs and modern web applications.",
   description:
     "I'm a web developer based in Yangon, Myanmar, focused on building modern web applications with React, TypeScript, Node.js and modern tooling — using AI-assisted development to learn faster, solve harder problems and ship better solutions.",
   bioExtra:

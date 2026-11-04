@@ -1,3 +1,4 @@
+import { type PointerEvent, useRef } from 'react';
 import { ArrowUpRight, Calendar, Clock, Download, Github, Linkedin, Mail, Map } from 'lucide-react';
 import { CONTACT_LINKS, CV_URL, PROFILE_INFO } from '../../data';
 import { scrollToSection } from '../../lib/scroll';
@@ -13,15 +14,33 @@ const SOCIAL_ICONS = {
 
 export default function Hero() {
   const socials = CONTACT_LINKS;
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  const handlePointerMove = (event: PointerEvent<HTMLElement>) => {
+    const node = sectionRef.current;
+    if (!node) return;
+    const rect = node.getBoundingClientRect();
+    node.style.setProperty('--spot-x', `${event.clientX - rect.left}px`);
+    node.style.setProperty('--spot-y', `${event.clientY - rect.top}px`);
+  };
 
   return (
     <section
+      ref={sectionRef}
+      onPointerMove={handlePointerMove}
       className="relative overflow-hidden pb-20 pt-32 sm:pb-28 sm:pt-44"
       aria-label="Introduction"
     >
-      {/* Soft warm glow backdrop */}
+      {/* Warm glow: static halo + cursor-following spotlight */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-[480px] w-[720px] -translate-x-1/2 rounded-full bg-accent-soft blur-3xl" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(540px circle at var(--spot-x, 50%) var(--spot-y, 0%), color-mix(in srgb, var(--accent) 20%, transparent), transparent 72%)',
+          }}
+        />
       </div>
 
       <Container className="relative flex flex-col items-center text-center">

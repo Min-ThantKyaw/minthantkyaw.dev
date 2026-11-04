@@ -194,7 +194,7 @@ export default function Navbar() {
                 Download CV
               </a>
 
-              <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+              <p className="mt-8 font-mono text-[12px] uppercase tracking-[0.2em] text-muted">
                 Email
               </p>
               <a

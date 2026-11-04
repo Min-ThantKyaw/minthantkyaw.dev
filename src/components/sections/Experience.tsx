@@ -1,4 +1,4 @@
-import { ArrowUpRight, Building2 } from 'lucide-react';
+import { Building2, Check } from 'lucide-react';
 import { EXPERIENCE_ITEMS, EXPERIENCE_SECTION } from '../../data';
 import Section from '../ui/Section';
 import Reveal from '../ui/Reveal';
@@ -16,14 +16,22 @@ export default function Experience() {
       <div className="mt-12">
         {EXPERIENCE_ITEMS.map((item, index) => (
           <Reveal key={item.id} delay={index * 80}>
-            <article className="grid gap-6 border-t border-line py-10 first:border-t-0 first:pt-0 md:grid-cols-12 md:gap-8">
-              <div className="md:col-span-3">
-                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+            <article className="grid gap-6 border-t border-line py-8 first:border-t-0 first:pt-0 md:grid-cols-12 md:gap-8 md:border-t-0">
+              {/* Date column + timeline rail */}
+              <div className="relative md:col-span-3 md:border-r md:border-line md:pr-6">
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    'absolute -right-[5px] top-1 hidden h-2.5 w-2.5 rounded-full ring-4 ring-canvas md:block',
+                    item.current ? 'bg-accent' : 'bg-line-strong',
+                  )}
+                />
+                <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-muted">
                   {item.period}
                 </p>
                 <p
                   className={cn(
-                    'mt-3 inline-flex items-center gap-2 rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em]',
+                    'mt-3 inline-flex items-center gap-2 rounded-full px-3 py-1 font-mono text-[12px] uppercase tracking-[0.16em]',
                     item.current ? 'bg-accent-soft text-accent' : 'border border-line text-muted',
                   )}
                 >
@@ -47,16 +55,16 @@ export default function Experience() {
                   {item.company}
                 </p>
 
-                <div className="mt-7 grid gap-8 sm:grid-cols-2">
+                <div className="mt-6 grid gap-8 sm:grid-cols-2">
                   <div>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                    <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-muted">
                       Responsibilities
                     </p>
                     <ul className="mt-3 space-y-2.5">
                       {item.responsibilities.map((responsibility) => (
                         <li
                           key={responsibility}
-                          className="flex gap-3 text-sm leading-relaxed text-muted"
+                          className="flex gap-3 text-[15px] leading-relaxed text-muted"
                         >
                           <span
                             aria-hidden="true"
@@ -69,16 +77,16 @@ export default function Experience() {
                   </div>
 
                   <div>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
+                    <p className="font-mono text-[12px] uppercase tracking-[0.2em] text-accent">
                       Outcomes
                     </p>
                     <ul className="mt-3 space-y-2.5">
                       {item.achievements.map((achievement) => (
                         <li
                           key={achievement}
-                          className="flex gap-2.5 text-sm leading-relaxed text-ink"
+                          className="flex gap-2.5 text-[15px] leading-relaxed text-ink"
                         >
-                          <ArrowUpRight
+                          <Check
                             aria-hidden="true"
                             className="mt-0.5 h-4 w-4 shrink-0 text-accent"
                           />

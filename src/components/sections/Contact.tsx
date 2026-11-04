@@ -5,10 +5,10 @@ import Section from '../ui/Section';
 import Reveal from '../ui/Reveal';
 import { Button } from '../ui/Button';
 
-const LABEL_CLASS = 'block text-xs font-medium text-muted';
+const LABEL_CLASS = 'block text-[13px] font-medium text-muted';
 
 const INPUT_CLASS =
-  'mt-2 w-full rounded-lg border border-line bg-surface px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20';
+  'mt-2 w-full rounded-lg border border-line bg-surface px-3.5 py-2.5 text-base text-ink placeholder:text-muted/70 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20';
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
@@ -91,7 +91,7 @@ export default function Contact() {
         {/* Direct contact */}
         <div className="lg:col-span-6">
           <Reveal>
-            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">Email</p>
+            <p className="font-mono text-[12px] uppercase tracking-[0.18em] text-muted">Email</p>
 
             <div className="mt-3 flex items-start gap-3">
               <a
@@ -111,7 +111,7 @@ export default function Contact() {
             </div>
             <p
               aria-live="polite"
-              className="mt-2 h-4 font-mono text-[10px] uppercase tracking-[0.16em] text-accent"
+              className="mt-2 h-4 font-mono text-[12px] uppercase tracking-[0.16em] text-accent"
             >
               {copied ? 'Copied to clipboard' : ''}
             </p>
@@ -128,7 +128,7 @@ export default function Contact() {
                   className="group flex items-center justify-between gap-4 border-b border-line py-4"
                 >
                   <span className="flex min-w-0 items-baseline gap-3">
-                    <span className="w-16 shrink-0 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                    <span className="w-16 shrink-0 font-mono text-[12px] uppercase tracking-[0.18em] text-muted">
                       {link.label}
                     </span>
                     <span className="truncate text-sm text-ink transition-colors group-hover:text-accent">

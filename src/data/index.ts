@@ -5,3 +5,4 @@ export * from './experience.ts';
 export * from './projects.ts';
 export * from './skills.ts';
 export * from './contact.ts';
+export * from './assistant.ts';

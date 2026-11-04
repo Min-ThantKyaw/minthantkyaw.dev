@@ -5,6 +5,6 @@ export const ABOUT_SECTION = {
 
 export const CURRENT_ROLE = {
   role: "Senior Developer",
-  company: "Metateam Myanmar",
+  company: "Metateam Myanmar Co., Ltd.",
   note: "Maintaining production applications & troubleshooting server issues",
 } as const;

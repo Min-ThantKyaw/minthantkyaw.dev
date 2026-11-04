@@ -1,6 +1,7 @@
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
+import WelcomeModal from './components/layout/WelcomeModal';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
@@ -31,6 +32,7 @@ export default function App() {
 
       <Footer />
       <ScrollToTop />
+      <WelcomeModal />
     </div>
   );
 }

@@ -14,7 +14,7 @@ export default function Footer() {
           >
             M
           </span>
-          <p className="text-xs text-muted">
+          <p className="text-[13px] text-muted">
             © {new Date().getFullYear()} Min Thant Kyaw
           </p>
         </div>
@@ -22,18 +22,18 @@ export default function Footer() {
         <a
           href={CV_URL}
           download
-          className="group inline-flex items-center gap-2 text-xs font-medium text-muted transition-colors hover:text-accent"
+          className="group inline-flex items-center gap-2 text-[13px] font-medium text-muted transition-colors hover:text-accent"
         >
           <Download className="h-3.5 w-3.5" />
           Download CV
         </a>
 
-        <p className="text-xs text-muted">Built with React · TypeScript · Tailwind</p>
+        <p className="text-[13px] text-muted">Built with React · TypeScript · Tailwind</p>
 
         <button
           type="button"
           onClick={scrollToTop}
-          className="group inline-flex items-center gap-2 text-xs font-medium text-muted transition-colors hover:text-ink"
+          className="group inline-flex items-center gap-2 text-[13px] font-medium text-muted transition-colors hover:text-ink"
         >
           Back to top
           <ArrowUp className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5" />

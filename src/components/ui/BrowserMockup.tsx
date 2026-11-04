@@ -126,7 +126,7 @@ export default function BrowserMockup({ variant, url, className }: BrowserMockup
           <span className="h-2 w-2 rounded-full bg-line-strong" />
           <span className="h-2 w-2 rounded-full bg-line-strong" />
         </span>
-        <span className="ml-2 flex-1 truncate rounded-md border border-line bg-canvas px-3 py-1 font-mono text-[10px] text-muted">
+        <span className="ml-2 flex-1 truncate rounded-md border border-line bg-canvas px-3 py-1 font-mono text-[11px] text-muted">
           {url}
         </span>
       </div>

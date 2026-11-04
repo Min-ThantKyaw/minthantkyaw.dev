@@ -19,7 +19,7 @@ export default function SectionHeader({
     <div className="grid gap-5 md:grid-cols-12 md:gap-8">
       <div className="md:col-span-4">
         <Reveal>
-          <p className="font-mono text-[11px] uppercase tracking-[0.24em]">
+          <p className="font-mono text-[12px] uppercase tracking-[0.24em]">
             <span className="text-muted">{index}</span>
             <span className="mx-2 text-muted">/</span>
             <span className="text-accent">{label}</span>

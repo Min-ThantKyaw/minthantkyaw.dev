@@ -33,11 +33,11 @@ export const PROFILE_INFO: ProfileInfo = {
   availabilityStatus: "Available for work",
   isAvailable: true,
   headline:
-    "Building AI-driven, production-ready applications with a strong focus on backend development. Experienced in PHP, Laravel, Node.js, and TypeScript, with expertise in developing scalable APIs and modern web applications.",
+    "Building and maintaining AI-driven, production-ready applications with a strong backend focus using PHP, Laravel, Node.js, and TypeScript.",
   description:
-    "I'm a web developer based in Yangon, Myanmar, focused on building modern web applications with React, TypeScript, Node.js and modern tooling — using AI-assisted development to learn faster, solve harder problems and ship better solutions.",
+    "I'm a developer based in Yangon, Myanmar, with a strong focus on backend development, system maintenance, and AI-assisted application development.",
   bioExtra:
-    "Since starting my journey in 2023, I've grown from shipping client websites to leading backend architecture at Metateam Myanmar — improving API performance, mentoring junior developers and owning deployments end to end.",
+    "Since starting my journey in 2023, I've gained hands-on experience maintaining production applications, improving APIs, troubleshooting server issues, and handling deployment and infrastructure-related tasks. Outside of work, I build personal projects using PHP, Laravel, Node.js, TypeScript, and React, leveraging AI-assisted development to explore new technologies and turn ideas into working applications.",
   location: {
     label: "Location",
     value: "Yangon, Myanmar",

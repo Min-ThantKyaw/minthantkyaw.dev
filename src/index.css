@@ -159,6 +159,17 @@
   }
 }
 
+/* Glass surface for the floating assistant panel. */
+.bg-surface-glass {
+  background-color: var(--surface);
+}
+
+@supports (background-color: color-mix(in srgb, red 50%, transparent)) {
+  .bg-surface-glass {
+    background-color: color-mix(in srgb, var(--surface) 86%, transparent);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -203,4 +214,29 @@
 
 .animate-sheet-up {
   animation: sheetUp 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Floating assistant panel: scale-in on desktop, slide-up on mobile. */
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-panel-in {
+  animation: panelIn 0.26s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: bottom right;
+}
+
+@media (max-width: 639px) {
+  .animate-panel-in {
+    animation: sheetUp 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+    transform-origin: bottom center;
+  }
 }

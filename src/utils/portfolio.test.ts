@@ -39,7 +39,8 @@ test('PROFILE_INFO contains correct portfolio information for Min Thant Kyaw', (
   assert.equal(PROFILE_INFO.age.label, 'Age');
   assert.equal(PROFILE_INFO.age.value, 25);
   assert.equal(PROFILE_INFO.role, 'WEB DEVELOPER');
-  assert.match(PROFILE_INFO.description, /React, TypeScript, Node\.js/);
+  assert.match(PROFILE_INFO.description, /backend/i);
+  assert.match(PROFILE_INFO.description, /Yangon/);
 });
 
 test('calculateEntranceDelay computes proper staggered timing in milliseconds', () => {

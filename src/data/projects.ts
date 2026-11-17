@@ -26,15 +26,15 @@ export interface Project {
 
 export const PROJECTS: readonly Project[] = [
   {
-    id: "booking-system",
-    name: "Booking System",
+    id: "professional service-matching web platform",
+    name: "Professional Service-Matching Web Platform (Japan)",
     description:
-      "A full-stack booking platform with calendar scheduling, payments and an admin panel for managing reservations end to end.",
-    category: "Full-stack",
+      "A B2C/B2B service-matching marketplace developed for the Japanese market that connects users directly with vetted professionals across industries such as legal, real estate, and business consulting. Backed by major regional media organizations, the platform emphasizes high trust and credibility by featuring only screened experts.",
+    category: "Production Support & Cloud Troubleshooting",
     year: "2024",
-    kind: "Personal project",
+    kind: "Client work",
     visual: "booking",
-    tech: ["React", "Node.js", "MongoDB"],
+    tech: ["Laravel", "WordPress", "MySQL", "Tailwind CSS", "AWS"],
   },
   {
     id: "minthantkyaw.dev",

@@ -14,7 +14,9 @@
     "lint": "tsc --noEmit",
     "test": "tsx --test src/utils/portfolio.test.ts",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "generate:og": "node scripts/generate-og.mjs"
+    "generate:og": "node scripts/generate-og.mjs",
+    "generate:mockup": "node scripts/generate-expert-hub-mockup.mjs",
+    "generate:laptop": "node scripts/generate-expert-hub-laptop.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

@@ -16,11 +16,13 @@ import {
   SiMysql,
   SiNginx,
   SiNodedotjs,
+  SiOpencode,
   SiPhp,
   SiPostgresql,
   SiReact,
   SiTailwindcss,
   SiTypescript,
+  SiWindsurf,
   SiWordpress,
 } from 'react-icons/si';
 import { Bot, Braces, Cloud } from 'lucide-react';
@@ -49,6 +51,8 @@ export const TECH_ICONS: Record<string, TechIcon> = {
   'GitHub Actions': SiGithubactions,
   WordPress: SiWordpress,
   ChatGPT: ({ className }) => <Bot className={className} />,
+  OpenCode: SiOpencode,
+  Windsurf: SiWindsurf,
   Claude: SiAnthropic,
   Gemini: SiGooglegemini,
   'GitHub Copilot': SiGithubcopilot,

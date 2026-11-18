@@ -1,7 +1,7 @@
 export const SKILLS_SECTION = {
   label: 'TOOLBOX',
   title: 'Skills',
-  description: 'Technologies and tools I\'ve worked with in the development, deployment and maintenance of production applications.',
+  description: 'Technologies and tools I\'ve worked with in the development, deployment and maintenance.',
 } as const;
 
 export interface SkillCategory {

@@ -1,7 +1,7 @@
 export const PROJECTS_SECTION = {
   label: 'PORTFOLIO',
   title: 'Selected work',
-  description: 'A few projects that show how I design, build and ship software.',
+  description: 'A few projects that show how I maintain, build and ship software.',
 } as const;
 
 export type ProjectVisual = 'api' | 'dashboard' | 'booking';
@@ -34,18 +34,18 @@ export const PROJECTS: readonly Project[] = [
     year: "2024",
     kind: "Client work",
     visual: "booking",
-    tech: ["Laravel", "WordPress", "MySQL", "Tailwind CSS", "AWS"],
+    tech: ["Laravel", "WordPress", "MySQL", "Tailwind CSS", "AWS", "Stripe"],
   },
   {
-    id: "minthantkyaw.dev",
-    name: "Personal Website",
+    id: "cl9-studio.dev",
+    name: "Multi-Branch Music Studio Booking & Management System",
     description:
-      "A modern, responsive website showcasing my portfolio, blog, and contact information.",
+      "This end-to-end reservation and management platform was developed for a multi-location music rehearsal studio chain operating across 6 branches in Japan. The system bridges customer-facing online bookings with internal studio operations, allowing musicians to book rooms effortlessly while giving staff full control over daily schedules.",
     category: "Frontend",
-    year: "2024",
-    kind: "Personal project",
+    year: "2025",
+    kind: "Client work",
     visual: "api",
-    tech: ["Node.js", "Express", "PostgreSQL", "JWT"],
+    tech: ["Laravel", "PostgreSQL", "React", "Tailwind CSS", "AWS"],
     liveUrl: "https://minthantkyaw.dev",
     sourceUrl: "https://github.com/Min-ThantKyaw/minthantkyaw.dev",
     detailsUrl: "https://minthantkyaw.dev/work/minthantkyaw.dev",

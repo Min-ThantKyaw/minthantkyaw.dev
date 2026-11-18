@@ -2,7 +2,7 @@ export const CONTACT_SECTION = {
   label: "CONTACT",
   title: "Let's work together.",
   description:
-    "Interested in working together? Chat with my AI assistant to learn more about my skills and experience, ask pre-interview questions, or send me a message. AI-powered workflows help ensure every inquiry gets a response.",
+    "Interested in working together? Chat with my AI assistant to learn more about my skills and experience, ask pre-interview questions, or send me a message.",
 } as const;
 
 export interface ContactLink {

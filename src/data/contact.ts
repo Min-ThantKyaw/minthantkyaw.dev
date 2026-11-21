@@ -19,7 +19,7 @@ export const CONTACT_LINKS: readonly ContactLink[] = [
     id: 'linkedin',
     label: 'LinkedIn',
     value: 'in/minthantkyaw',
-    href: 'https://linkedin.com/in/minthantkyaw',
+    href: 'https://www.linkedin.com/in/min-thant-kyaw-7a042b284/',
   },
   {
     id: 'github',

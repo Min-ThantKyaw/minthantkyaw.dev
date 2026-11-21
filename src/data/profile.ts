@@ -37,7 +37,7 @@ export const PROFILE_INFO: ProfileInfo = {
   description:
     "I'm a developer based in Yangon, Myanmar, with a strong focus on backend development, system maintenance, and AI-assisted application development.",
   bioExtra:
-    "Since starting my journey in 2023, I've gained hands-on experience maintaining production applications, improving APIs, troubleshooting server issues, and handling deployment and infrastructure-related tasks. Outside of work, I build personal projects using PHP, Laravel, Node.js, TypeScript, and React, leveraging AI-assisted development to explore new technologies and turn ideas into working applications.",
+    "Since starting my journey in 2024, I've gained hands-on experience maintaining production applications, improving APIs, troubleshooting server issues, and handling deployment and infrastructure-related tasks. Outside of work, I build personal projects using PHP, Laravel, Node.js, TypeScript, and React, leveraging AI-assisted development to explore new technologies and turn ideas into working applications.",
   location: {
     label: "Location",
     value: "Yangon, Myanmar",
@@ -50,7 +50,7 @@ export const PROFILE_INFO: ProfileInfo = {
   stats: [
     { value: "3+", label: "Years of experience" },
     { value: "10+", label: "Projects shipped" },
-    { value: "2023", label: "In Tech Since" },
+    { value: "2024", label: "In Tech Since" },
   ],
 } as const;
 
